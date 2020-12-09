@@ -1,15 +1,58 @@
-const credits = 23580;
-const pricePerDroid = 3000;
+const formatString = function(string) {
+  const MAX_LENGTH = 40;
+ 
+  if (string.length <= MAX_LENGTH) {
+      return string;
+  }
+  
+  return string.slice(0,MAX_LENGTH - 3) + '...';
+  
+  };
+  
+  /*
+   * Вызовы функции для проверки работоспособности твоей реализации.
+   */
+  console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+  // вернется оригинальная строка
+  
+  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+  // вернется форматированная строка
+  
+  console.log(formatString('Curabitur ligula sapien.'));
+  // вернется оригинальная строка
+  
+  console.log(
+    formatString(
+      'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+    ),
+  );
+  // вернется форматированная строка
 
-let userOrder = prompt('Введите количество дроидов');
-if (userOrder === null) {
-    alert('Отменено пользователем!');
-}
-userOrder = Number(userOrder);
-const totalPrice = userOrder * pricePerDroid;
-const totalCredits = credits - totalPrice;
-console.log(totalPrice);
+// const formatString = function(string) {
+// let numberWords = Number(string.length);
+// if (numberWords <= 40) {
+//     return string;
+// }
+// else {
+// return string.slice(0,40 - 3) + '...';
+// }
+// };
 
-const message = credits > totalPrice ? `Вы купили [${userOrder}] дроидов, на счету осталось [${totalCredits}] кредитов.` 
-: 'Недостаточно средств на счету!';
-console.log(message);
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// // вернется оригинальная строка
+
+// console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// // вернется форматированная строка
+
+// console.log(formatString('Curabitur ligula sapien.'));
+// // вернется оригинальная строка
+
+// console.log(
+//   formatString(
+//     'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+//   ),
+// );
+// // вернется форматированная строка

@@ -1,10 +1,16 @@
-const logItems = function(array) {
-  for(let i=0; i < array.length; i++) {
-    const message = `${i + 1} - ${array[i]}`;
-    console.log(message);
-  }
- }
+const user = {
+  name: 'Mango',
+  age: 20,
+  hobby: 'html',
+  premium: true,
+};
 
-logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+user.mood = 'happy';
+user.hobby = 'skidiving';
+user.premium = false;
 
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+const keys = Object.keys(user);
+
+for (const key of keys) {
+  console.table(`${key}: ${user[key]}`);
+};

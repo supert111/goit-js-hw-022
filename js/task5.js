@@ -1,87 +1,15 @@
-let credits; 
-let answerCountry;
+const checkForSpam = function(message) {
+    let string = message.toLowerCase();
+        return (string.includes('spam') || string.includes('sale'));  
+    };
 
-const country = prompt('Введите имя страны доставки').toLowerCase();
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(checkForSpam('Latest technology news')); // false
 
-const CHINA = 'китай';
-const CHILE = 'чили';
-const AUSTRALIA = 'австралия';
-const INDIA = 'индия';
-const JAMAICA = 'ямайка';
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-switch (country) {
-    
-case CHINA:
-    credits = 100;
-    answerCountry = 'Китай';
-    break;
+console.log(checkForSpam('Get best sale offers now!')); // true
 
-case CHILE:
-    credits = 250;
-    answerCountry = 'Чили';
-    break;
-
-case AUSTRALIA:
-    credits = 170;
-    answerCountry = 'Австралия';
-    break;
-
-case INDIA:
-    credits = 80;
-    answerCountry = 'Индия';
-    break;
-
-case JAMAICA:
-    credits = 120;
-    answerCountry = 'Ямайка';
-    break;
-    
-default:
-    alert('В вашей стране доставка не доступна'); 
-}
-if (credits !== undefined) {
-    alert(`Доставка в [${answerCountry}] будет стоить [${credits}] кредитов`);
-}
-
-// ================================================
-// let credits; 
-// let answerCountry;
-
-// const country = prompt('Введите имя страны доставки').toLowerCase();
-
-
-// switch (country) {
-    
-// case 'китай':
-//     credits = 100;
-//     answerCountry = 'Китай';
-//     alert(`Доставка в [${answerCountry}] будет стоить [${credits}] кредитов`);
-//     break;
-
-// case 'чили':
-//     credits = 250;
-//     answerCountry = 'Чили';
-//     alert(`Доставка в [${answerCountry}] будет стоить [${credits}] кредитов`);
-//     break;
-
-// case 'австралия':
-//     credits = 170;
-//     answerCountry = 'Австралия';
-//     alert(`Доставка в [${answerCountry}] будет стоить [${credits}] кредитов`);
-//     break;
-
-// case 'индия':
-//     credits = 80;
-//     answerCountry = 'Индия';
-//     alert(`Доставка в [${answerCountry}] будет стоить [${credits}] кредитов`);
-//     break;
-
-// case 'ямайка':
-//     credits = 120;
-//     answerCountry = 'Ямайка';
-//     alert(`Доставка в [${answerCountry}] будет стоить [${credits}] кредитов`);
-//     break;
-
-// default:
-//     alert('В вашей стране доставка не доступна');
-// }
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true

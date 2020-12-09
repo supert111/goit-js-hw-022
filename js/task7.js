@@ -1,21 +1,26 @@
-const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-// Вернет новый массив в котором будут элементы с индексами от 1 до 2
-console.log(clients.slice(1, 3)); // ["Ajax", "Poly"]
+const isLoginValid = function(login) {
+return login.length > 3 & login.length < 17;
+};
 
-// Вернет новый массив в котором будут
-// элементы с индексами от 1 до (clients.length - 1)
-console.log(clients.slice(1)); // ["Ajax", "Poly", "Kiwi"]
+const isLoginUnique = function(allLogins, login) {
+return !allLogins.includes(login);
+};
 
-// Вернет копию исходного массива
-console.log(clients.slice()); // ["Mango", Ajax", "Poly", "Kiwi"]
+const addLogin = function(allLogins, login) {
+  if (!isLoginValid(login))
+  return 'Ошибка! Логин должен быть от 4 до 16 символов';
+  if (!isLoginUnique(allLogins, login))
+  return 'Такой логин уже используется!';
+  allLogins.push(login);
+  return 'Логин успешно добавлен!';
+};
 
-// Вернет новый массив состоящих из последних двух элементом исходного
-console.log(clients.slice(-3,-1)); // ["Poly", "Kiwi"]
-
-
-
-
-
-  
-  
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(addLogin(logins, 'Ajax')); // 'Логин успешно добавлен!'
+console.log(addLogin(logins, 'robotGoogles')); // 'Такой логин уже используется!'
+console.log(addLogin(logins, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
