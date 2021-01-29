@@ -1,5 +1,8 @@
 import galleryItems from "./gallery-items.js"
 
+//Разбей задание на несколько подзадач:
+//1- Создание и рендер разметки по массиву данных
+// и предоставленному шаблону.
 const jsGalleryRef = document.querySelector('.js-gallery');
 
 const liMarkup = (el => {
@@ -26,6 +29,23 @@ const allGallery = galleryItems.map(element => {
     
 });
    jsGalleryRef.append(...allGallery);
+
+// 2- Реализация делегирования на галерее ul.js-gallery 
+//и получение url большого изображения.
+const refs = {
+    tags: document.querySelector('.js-gallery'),
+};
+
+refs.tags.addEventListener('click', onTagsClick);
+function onTagsClick(event) {
+    if(event.target.nodeName !== 'IMG') {
+        console.log('Клик не по картинке, выходим.');
+        return;
+    }
+};   
+const currentActiveImage = event.currentTarget.querySelector();   
+const nextActiveImage = event.target;
+//nextActiveImage.
 
 
 
