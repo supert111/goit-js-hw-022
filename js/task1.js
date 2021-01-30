@@ -42,10 +42,14 @@ function onTagsClick(event) {
         console.log('Клик не по картинке, выходим.');
         return;
     }
+    const currentActiveImage = refs.tags.querySelector('data-source');
+    //const currentActiveImage = event.currentTarget.querySelector('data-source');   
+    const nextActiveImage = event.target;
+    console.log(currentActiveImage);
+    
+    //nextActiveImage.
 };   
-const currentActiveImage = event.currentTarget.querySelector();   
-const nextActiveImage = event.target;
-//nextActiveImage.
+
 
 
 
